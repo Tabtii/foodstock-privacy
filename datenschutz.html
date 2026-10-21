@@ -1,101 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenschutzerklärung — FoodStock</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — FoodStock App</title>
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; color: #333; line-height: 1.6; }
-h1 { color: #2d5016; }
-h2 { color: #2d5016; margin-top: 32px; }
+h1 { color: #2d5016; } h2 { color: #2d5016; margin-top: 32px; } h3 { margin-top: 24px; }
 .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 0.9em; }
+a { color: #2d5016; }
 </style>
 </head>
 <body>
-<h1>Datenschutzerklärung — FoodStock App</h1>
-<p><strong>Stand: 5. Juli 2026</strong></p>
 
-<p>FoodStock ("die App") nimmt den Schutz deiner persönlichen Daten ernst. Diese Datenschutzerklärung erläutert, wie wir Daten erfassen, verwenden und schützen.</p>
+<h1>Datenschutzerklärung — FoodStock App</h1>
+<p><em>Stand: 21. Oktober 2026</em></p>
+
+<p>FoodStock („die App“) nimmt den Schutz deiner persönlichen Daten ernst. Diese Datenschutzerklärung erläutert, welche Daten bei welchen Funktionen verarbeitet werden.</p>
 
 <h2>1. Verantwortlicher</h2>
-<p>Verantwortlich für die Datenverarbeitung im Rahmen dieser App ist der Entwickler der FoodStock-App. Bei Fragen zum Datenschutz kannst du dich an foodstock.app@gmail.com wenden.</p>
+<p>Torben Wolff<br>
+Hauptstr. 3<br>
+63694 Limeshain<br>
+Deutschland<br>
+E-Mail: <a href="mailto:foodstock.app@gmail.com">foodstock.app@gmail.com</a></p>
 
-<h2>2. Welche Daten wir erfassen</h2>
+<h2>2. Welche Daten verarbeitet werden</h2>
 
-<h3>2.1 Lokal auf deinem Gerät gespeicherte Daten</h3>
+<h3>2.1 Daten nur auf deinem Gerät</h3>
+<p>Inventardaten (Lebensmittelname, Kategorie, Menge, Einheit, Ablaufdatum, Lagerort), Einkaufslisten, Rezepte (selbst erstellt oder generiert), Activity-Log-Einträge und App-Einstellungen werden auf deinem Gerät gespeichert. Ohne Konto oder aktivierten Sync werden keine dieser Daten an Server übertragen. Du entfernst sie, indem du die App-Daten löschst oder die App deinstallierst.</p>
+
+<h3>2.2 Benutzerkonto (optional)</h3>
+<p>Ein Konto ist nur für Cloud-Sync, Haushaltsfreigabe und Premium-Funktionen nötig. Dann verarbeitet die App: E-Mail-Adresse und Passwort (nur als Hash gespeichert) sowie Zeitpunkte von Registrierung, Bestätigung und Anmeldung.</p>
+
+<h3>2.3 Cloud-Sync und Haushaltsfreigabe (Premium, optional)</h3>
+<p>Bei aktiviertem Sync werden Inventar-, Einkaufslisten-, Rezept- und Activity-Log-Daten über Supabase zwischen deinen Geräten synchronisiert. Supabase hostet die Daten in der EU; Übertragung und Speicherung erfolgen verschlüsselt (TLS). Haushalte werden über Einladungscodes verknüpft; der Sync verwendet anonyme Identifikatoren. Im Haushalts-Activity-Log wird aufgezeichnet, wer was wann hinzugefügt, verbraucht oder verschenkt hat — nur innerhalb deines Haushalts sichtbar.</p>
+
+<h3>2.4 KI-Rezeptgenerierung</h3>
 <ul>
-<li><strong>Inventardaten:</strong> Lebensmittelname, Kategorie, Menge, Einheit, Ablaufdatum, Lagerort</li>
-<li><strong>Einkaufslisten:</strong> Artikelname, Menge, Einheit</li>
-<li><strong>Rezepte:</strong> Von der KI generierte oder manuell erstellte Rezepte</li>
-<li><strong>Haushaltsmitglieder:</strong> Namen der Haushaltsmitglieder (lokal auf dem Gerät)</li>
-<li><strong>App-Einstellungen:</strong> Präferenzen, Theme, Benachrichtigungseinstellungen</li>
+<li><strong>Cloud-KI (Standard):</strong> Die App übermittelt Zutatennamen (z.&nbsp;B. „Tomate“, „Nudeln“) über eine abgesicherte Server-Funktion an die Google Gemini API. Es werden keine Kontodaten und keine sonstigen Nutzerdaten gesendet. Die generierten Rezepte werden lokal bzw. bei aktiviertem Sync über Supabase gespeichert.</li>
+<li><strong>Eigener API-Key / Hermes-Integration:</strong> Du kannst statt der Gemini API einen eigenen Schlüssel angeben oder die App an deinen eigenen Hermes-Agenten anbinden. In diesem Fall gehen die Zutatendaten an den von <em>dir</em> konfigurierten Dienst (z.&nbsp;B. ein Modell auf deinem eigenen Gerät oder ein von dir eingerichteter Cloud-Anbieter). Für diesen Weg sind der Agent bzw. Anbieter Empfänger der Daten, nicht wir.</li>
 </ul>
-<p>Diese Daten werden ausschließlich lokal auf deinem Gerät in einer verschlüsselten Datenbank gespeichert und nicht an Server übertragen — es sei denn, du aktivierst den Cloud-Sync (Premium-Feature).</p>
-
-<h3>2.2 Cloud-Sync (Premium-Feature, optional)</h3>
-<p>Wenn du den Cloud-Sync aktivierst (Premium-Feature), werden deine Inventar- und Einkaufslistendaten über Supabase (eine gehostete PostgreSQL-Datenbank) zwischen deinen Geräten synchronisiert. Die Daten werden dabei folgendermaßen verarbeitet:</p>
-<ul>
-<li><strong>Supabase:</strong> Gehostet in der EU, ISO 27001 zertifiziert. Daten werden verschlüsselt übertragen (TLS) und gespeichert.</li>
-<li><strong>Haushalts-ID:</strong> Ein anonymer Identifikator verknüpft deine Geräte für den Sync</li>
-</ul>
-
-<h3>2.3 KI-Rezeptgenerierung (Premium-Feature)</h3>
-<p>Für die KI-Rezeptgenerierung werden Zutatennamen an die Google Gemini API übertragen. Es werden keine persönlichen Nutzerdaten gesendet — ausschließlich Zutatennamen wie "Tomate", "Nudeln", etc.</p>
-
-<h3>2.4 Google Play Billing</h3>
-<p>Für die Premium-Abonnement-Verwaltung verwendet die App Google Play Billing. Dabei werden Abonnement-Status und Kauf-IDs von Google Play empfangen. Zahlungsdaten werden ausschließlich von Google verarbeitet und erreichen nie unsere Systeme.</p>
 
 <h3>2.5 Barcode-Scanner</h3>
-<p>Beim Scannen von Barcodes wird der Barcode an OpenFoodFacts (openfoodfacts.org) gesendet, um Produktinformationen abzurufen. Es werden keine persönlichen Daten übertragen.</p>
+<p>Beim Scannen eines Barcodes wird die Barcode-Nummer an OpenFoodFacts (openfoodfacts.org) gesendet, um Produktinformationen abzurufen. Es werden keine personenbezogenen Daten übertragen.</p>
 
 <h3>2.6 Kassenbon-Scanner</h3>
-<p>Die Kassenbon-Erkennung findet vollständig lokal auf deinem Gerät statt. Bilder werden nicht an Server übertragen.</p>
+<p>Die Kassenbon-Erkennung läuft vollständig lokal auf deinem Gerät. Bilder werden nicht an Server übertragen.</p>
 
-<h2>3. Wie wir Daten verwenden</h2>
+<h3>2.7 Google Play Billing</h3>
+<p>Für Premium-Abonnements verwendet die App Google Play Billing. Abonnement-Status und Kauf-IDs werden von Google Play empfangen. Zahlungsdaten werden ausschließlich von Google verarbeitet und erreichen nicht unsere Systeme.</p>
+
+<h2>3. Datenweitergabe</h2>
+<p>Deine Daten werden nicht verkauft, vermietet oder zu Werbung genutzt. Weitergabe erfolgt nur, wenn du die entsprechende Funktion nutzt:</p>
 <ul>
-<li>Verwaltung deines Lebensmittelvorrats und Reduzierung von Lebensmittelverschwendung</li>
-<li>Einkaufslisten-Verwaltung</li>
-<li>KI-gestützte Rezeptgenerierung aus deinen Zutaten</li>
-<li>Cloud-Synchronisation zwischen Geräten (nur Premium)</li>
-<li>Verwaltung deines Premium-Abonnements via Google Play Billing</li>
+<li><strong>Google Gemini API</strong> — KI-Rezeptgenerierung (nur Zutatennamen)</li>
+<li><strong>OpenFoodFacts</strong> — Barcode-Produktsuche (nur Barcode-Nummer)</li>
+<li><strong>Supabase</strong> — Cloud-Sync und Kontoführung (nur bei aktivierter Nutzung)</li>
+<li><strong>Google Play Billing</strong> — Abonnement-Verwaltung</li>
+<li><strong>Dienst nach eigener Wahl</strong> — bei eigener Hermes-Integration/eigem API-Key</li>
 </ul>
 
-<h2>4. Datenweitergabe an Dritte</h2>
-<p>Wir verkaufen oder vermieten deine Daten nicht an Dritte. Daten werden nur an folgende Dienste weitergegeben, wenn die entsprechenden Features aktiv genutzt werden:</p>
+<h2>4. Deine Rechte</h2>
 <ul>
-<li><strong>Google Gemini API</strong> — für KI-Rezeptgenerierung (nur Zutatennamen)</li>
-<li><strong>OpenFoodFacts</strong> — für Barcode-Produktsuche (nur Barcode-Nummer)</li>
-<li><strong>Supabase</strong> — für Cloud-Sync (nur bei aktiviertem Premium-Sync)</li>
-<li><strong>Google Play Billing</strong> — für Abonnement-Verwaltung</li>
+<li>Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung (Art. 15–18 DSGVO)</li>
+<li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+<li>Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21 DSGVO)</li>
+<li>Beschwerde bei einer Datenschutz-Aufsichtsbehörde</li>
 </ul>
+<p>Zur Löschung deines Kontos siehe <a href="konto-loeschen.html">Konto löschen</a> bzw. die in der App integrierte Löschfunktion.</p>
 
-<h2>5. Deine Rechte</h2>
-<p>Du hast jederzeit das Recht auf:</p>
+<h2>5. Datensicherheit</h2>
 <ul>
-<li>Auskunft über deine gespeicherten Daten</li>
-<li>Berichtigung unrichtiger Daten</li>
-<li>Löschung deiner Daten (durch Deinstallation der App werden alle lokalen Daten gelöscht)</li>
-<li>Widerspruch gegen die Verarbeitung</li>
-<li>Datenübertragbarkeit</li>
-</ul>
-
-<h2>6. Datensicherheit</h2>
-<p>Wir setzen technische und organisatorische Maßnahmen ein, um deine Daten zu schützen:</p>
-<ul>
-<li>Lokale Datenbank-Verschlüsselung</li>
-<li>TLS-Verschlüsselung für alle Netzwerkverbindungen</li>
+<li>Lokale Datenbankverschlüsselung</li>
+<li>TLS für alle Netzwerkverbindungen</li>
 <li>Keine Speicherung von Zahlungsdaten</li>
-<li>Keine Tracking-SDKs oder Werbe-IDs</li>
+<li>Keine Tracking-SDKs, keine Werbe-IDs, keine Analyse- oder Absturzberichte-Dienste</li>
 </ul>
 
-<h2>7. Kinderdaten</h2>
-<p>Die App ist nicht für Kinder unter 13 Jahren gedacht und richtet sich nicht an sie. Wir erfassen wissentlich keine Daten von Kindern.</p>
+<h2>6. Kinderdaten</h2>
+<p>Die App richtet sich nicht an Kinder unter 13 Jahren. Es werden wissentlich keine Daten von Kindern erhoben.</p>
 
-<h2>8. Änderungen dieser Datenschutzerklärung</h2>
-<p>Wir können diese Datenschutzerklärung aktualisieren. Die jeweils aktuelle Version ist immer auf dieser Seite verfügbar.</p>
+<h2>7. Änderungen dieser Datenschutzerklärung</h2>
+<p>Bei funktionalen Änderungen der App wird diese Datenschutzerklärung aktualisiert. Die jeweils aktuelle Version ist immer auf dieser Seite verfügbar.</p>
 
-<h2>9. Kontakt</h2>
-<p>Bei Fragen zum Datenschutz: foodstock.app@gmail.com</p>
+<h2>8. Kontakt</h2>
+<p>Bei Fragen zum Datenschutz: <a href="mailto:foodstock.app@gmail.com">foodstock.app@gmail.com</a></p>
 
 <div class="footer">
 <p>© 2026 FoodStock — Vorrats-Manager</p>
